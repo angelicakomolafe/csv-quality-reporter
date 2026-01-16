@@ -74,6 +74,24 @@ A GitHub Actions workflow automatically runs tests on every push and pull reques
 
 ---
 
+## Evaluation
+
+### What Worked Well
+The modular design of the CSV Quality Reporter proved effective, as separating validation and reporting logic into distinct modules improved readability, maintainability, and testability. This structure allowed individual components to be developed and verified independently. The use of automated testing with pytest significantly increased confidence in the correctness of the solution, particularly when handling edge cases such as missing columns and duplicate rows. Additionally, integrating GitHub Actions for Continuous Integration ensured that all tests were executed automatically on each push, reducing the risk of regressions and reinforcing good software engineering practice.
+
+### Challenges and Trade-offs
+One of the key challenges encountered was configuring Python imports correctly across different operating systems, particularly on Windows. This required explicit configuration of the Python path for pytest, which highlighted the importance of understanding Python’s module resolution behaviour. Due to time constraints and the scope of the MVP, design decisions were made to prioritise backend correctness and testability over user-facing features such as a graphical interface or advanced configuration options. While this limited usability for non-technical users, it ensured that the core functionality was robust and verifiable.
+
+### Limitations
+The current implementation uses hard-coded validation rules, meaning required columns must be specified manually. The tool also outputs reports exclusively in JSON format, which may not be ideal for all users. Furthermore, the application operates as a local script rather than a packaged command-line tool or web application, which limits accessibility for less technical users.
+
+### Future Improvements
+Future development could include configurable validation rules via a configuration file, support for additional output formats such as HTML or CSV summaries, and the introduction of a simple user interface or command-line wrapper. Performance optimisations could also be explored for handling very large datasets, alongside enhanced logging and error reporting.
+
+Overall, the project successfully meets its objectives as a minimum viable product, demonstrating sound software engineering principles, effective testing practices, and the use of modern development workflows.
+
+---
+
 ## User Documentation
 ### How to Run
 ```bash
