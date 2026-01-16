@@ -1,0 +1,6 @@
+"id,name,email,age"
+"1,Amy,amy@example.com,21"
+"2,Ben,,24"
+"3,,z@ex.com,"
+"3,,z@ex.com,"
+"4,David,david@example.com,20"
